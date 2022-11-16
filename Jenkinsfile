@@ -9,7 +9,7 @@ pipeline {
         stage('OWASP DependencyCheck') {
 			steps {
 				dir('src'){
-    					dependencyCheck additionalArguments: '', odcInstallation: 'NodeAppODC'
+    					dependencyCheck additionalArguments: '', odcInstallation: 'OWASP Dependency-Check'
 				}	
 			}
 		}
