@@ -6,6 +6,13 @@ pipeline {
         }
     }
     stages {
+        stage('OWASP DependencyCheck') {
+			steps {
+				dir('src'){
+    					dependencyCheck additionalArguments: '', odcInstallation: 'NodeAppODC'
+				}	
+			}
+		}
         stage('Build') { 
             steps {
                 sh 'npm install' 
